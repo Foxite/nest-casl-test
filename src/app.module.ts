@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { ReportsModule } from './reports/reports.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Report } from './reports/entities/report.entity';
+import { CaslModule } from './casl/casl.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { Report } from './reports/entities/report.entity';
       entities: [Report],
       synchronize: true,
     }),
+    CaslModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

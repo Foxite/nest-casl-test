@@ -28,9 +28,8 @@ export class ReportsService {
     return this.repository.save(dto.toEntity());
   }
 
-  async update(id: number, dto: UpdateReportDto): Promise<Report> {
-    const entity = await this.findOne(id);
+  update(entity: Report, dto: UpdateReportDto): Promise<Report> {
     dto.apply(entity);
-    return await this.repository.save(entity);
+    return this.repository.save(entity);
   }
 }

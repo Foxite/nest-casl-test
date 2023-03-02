@@ -1,17 +1,13 @@
 import { Report } from '../entities/report.entity';
-import { Expose } from 'class-transformer';
 import { IsNumber, IsString } from 'class-validator';
 
 export class CreateReportDto {
-  @Expose()
   @IsNumber()
   assigneeId: number;
 
-  @Expose()
   @IsString()
   firstName: string;
 
-  @Expose()
   @IsString()
   lastName: string;
 

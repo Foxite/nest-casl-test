@@ -13,4 +13,7 @@ export class Report {
 
   @Column()
   lastName: string;
+
+  @Column()
+  finalized: boolean = false;
 }
